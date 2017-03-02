@@ -1,2 +1,2 @@
-# Change-your-way
+# Change your way
 The best game ever 
