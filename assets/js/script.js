@@ -1,35 +1,59 @@
 window.onload=start;
 //document.onkeydown=move;
-var table;
+// on cree le tableau bleu, contenant les lignes
+var table = new Array();
+// on parcourt les lignes...
+for(var i=0; i<20; i++){
+	table[i] = new Array();
+   // ... et dans chaque ligne, on parcourt les cellules
+	for(var j=0; j<20; j++){
+    	table[i][j] = 0;
+    }
+}
+
 var larg;
 var haut;
+var niveau;
 
 function start() {
-	table=[]; // on initialise le tableau
-	for(var i=0;i<20;i++) {
-		table[i]=[];
-		for(var j=0;j<20;j++) {
-			if(Math.random()>0.8 && (i!=0 && j!=0)) {
-				table[i][j]=1;
-			} else {
-				table[i][j]=0;
-			}
-		}
-	}
+	niveau=1;
+	niveau1();
+	/*
 	var alea=Math.floor(Math.random()*20);
 	table[19][alea]=2;
 	document.getElementById("coffre").style.top=19*20+'px';
 	document.getElementById("coffre").style.left=20*alea+'px';
+	*/
 	document.getElementById("pic2").style.top='0px';
 	document.getElementById("pic2").style.left='0px';
 	larg=0;
 	haut=0;
+	/*
 	if(table[0][1]==1) {
 		document.getElementById("mine").innerHTML++;
 	}
 	if(table[1][1]==1) {
 		document.getElementById("mine").innerHTML++;
 	}
+	*/
+}
+
+function niveau1() {
+	//Création du terrain 1
+	//Placement de la fleche de sortie
+	document.getElementById("fleche").style.top=19*20+'px';
+	document.getElementById("fleche").style.left=10*20+'px';
+	//Initialisation du terrain (pose de mur)
+	for(var i = 0 ; i <= 8 ; i++){
+		table[2][i]=1;
+	}
+	for(var i=2;i<=19;i++){
+		table[i][8]=1;
+	}
+	for(var i=0;i<=19;i++){
+		table[i][12]=1;
+	}
+
 }
 
 function retry() {
@@ -39,7 +63,7 @@ function retry() {
 	larg=0;
 	haut=0;
 }
-
+/*
 function displayMine() {
 	var conteneur = document.getElementById("conteneur");
 	var monImg = document.createElement('img');
@@ -51,7 +75,8 @@ function displayMine() {
 	monImg.style.left=larg*20+'px';
 	conteneur.appendChild(monImg);
 }
-
+*/
+/*
 function cheat() {
 	var h=haut;
 	var l=larg;
@@ -61,7 +86,7 @@ function cheat() {
 		larg=0;
 		for(var j=0;j<20;j++) {
 			if(table[i][j]==1) {
-				displayMine()
+				displayMine();
 			}
 			larg++;
 			console.log(larg);
@@ -71,7 +96,8 @@ function cheat() {
 	haut=h;
 	larg=l;
 }
-
+*/
+/*
 function verifMine() {
 	var nb=0;
 	if(haut!=0) {
@@ -96,6 +122,7 @@ function verifMine() {
 	}
 	document.getElementById("mine").innerHTML=nb;
 }
+*/
 
 // gestion des mouvements joueurs
 function move(event) {
@@ -115,18 +142,18 @@ function move(event) {
 				smile.style.left=x-20+'px';
 				larg--;
 				document.getElementById("pas").innerHTML++;
-				verifMine();
+				//verifMine();
 				if(table[haut][larg]==2) {
 					alert('win');
 					start();
 				}
-			} else {
+			}/* else {
 				larg--;
 				document.getElementById("pas").innerHTML-=10;
 				displayMine();
 				alert('die');
 				retry();
-			}
+			}*/
 		}
 	}
 
@@ -136,18 +163,18 @@ function move(event) {
 				smile.style.top=y-20+'px';
 				haut--;
 				document.getElementById("pas").innerHTML++;
-				verifMine();
+				//verifMine();
 				if(table[haut][larg]==2) {
 					alert('win');
 					start();
 				}
-			} else {
+			} /*else {
 				haut--;
 				document.getElementById("pas").innerHTML-=10;
 				displayMine();
 				alert('die');
 				retry();
-			}
+			}*/
 		}
 	}
 	if(key==39) { // 39 représente la touche fleche droite
@@ -156,18 +183,18 @@ function move(event) {
 				smile.style.left=x+20+'px';
 				larg++;
 				document.getElementById("pas").innerHTML++;
-				verifMine();
+				//verifMine();
 				if(table[haut][larg]==2) {
 					alert('win');
 					start();
 				}
-			} else {
+			}/* else {
 				larg++;
 				document.getElementById("pas").innerHTML-=10;
 				displayMine();
 				alert('die');
 				retry();
-			}
+			}*/
 		}
 	}
 	if(key==40) { // Si on appuie sur fleche bas
@@ -176,18 +203,18 @@ function move(event) {
 				smile.style.top=y+20+'px';
 				haut++;
 				document.getElementById("pas").innerHTML++;
-				verifMine();
+				//verifMine();
 				if(table[haut][larg]==2) {
 					alert('win');
 					start();
 				}
-			} else {
+			}/* else {
 				haut++;
 				document.getElementById("pas").innerHTML-=10;
 				displayMine();
 				alert('die');
 				retry();
-			}
+			}*/
 		}
 	}
 }
