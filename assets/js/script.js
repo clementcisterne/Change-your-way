@@ -4,15 +4,14 @@ var table;
 var larg;
 var haut;
 
-function start(){
-	table=[];
-	for(var i=0;i<20;i++){
+function start() {
+	table=[]; // on initialise le tableau
+	for(var i=0;i<20;i++) {
 		table[i]=[];
-		for(var j=0;j<20;j++){
-			if(Math.random()>0.8 && (i!=0 && j!=0)){
+		for(var j=0;j<20;j++) {
+			if(Math.random()>0.8 && (i!=0 && j!=0)) {
 				table[i][j]=1;
-			}
-			else{
+			} else {
 				table[i][j]=0;
 			}
 		}
@@ -25,14 +24,15 @@ function start(){
 	document.getElementById("pic2").style.left='0px';
 	larg=0;
 	haut=0;
-	if(table[0][1]==1){
+	if(table[0][1]==1) {
 		document.getElementById("mine").innerHTML++;
 	}
-	if(table[1][1]==1){
+	if(table[1][1]==1) {
 		document.getElementById("mine").innerHTML++;
 	}
 }
-function retry(){
+
+function retry() {
 	document.getElementById("pic2").style.top='0px';
 	document.getElementById("pic2").style.left='0px';
 	document.getElementById("nbDeath").innerHTML++;
@@ -40,7 +40,7 @@ function retry(){
 	haut=0;
 }
 
-function displayMine(){
+function displayMine() {
 	var conteneur = document.getElementById("conteneur");
 	var monImg = document.createElement('img');
 	monImg.src="./croix.png";
@@ -52,15 +52,15 @@ function displayMine(){
 	conteneur.appendChild(monImg);
 }
 
-function cheat(){
+function cheat() {
 	var h=haut;
 	var l=larg;
 	haut=0;
 	larg=0;
-	for(var i=0;i<20;i++){
+	for(var i=0;i<20;i++) {
 		larg=0;
-		for(var j=0;j<20;j++){
-			if(table[i][j]==1){
+		for(var j=0;j<20;j++) {
+			if(table[i][j]==1) {
 				displayMine()
 			}
 			larg++;
@@ -71,53 +71,56 @@ function cheat(){
 	haut=h;
 	larg=l;
 }
-function verifMine(){
+
+function verifMine() {
 	var nb=0;
-	if(haut!=0){
-		if(table[haut-1][larg]==1){
+	if(haut!=0) {
+		if(table[haut-1][larg]==1) {
 		nb++;
 		}
 	}
-	if(haut!=19){
-		if(table[haut+1][larg]==1){
+	if(haut!=19) {
+		if(table[haut+1][larg]==1) {
 		nb++;
 		}
 	}
-	if(larg!=0){
-		if(table[haut][larg-1]==1){
+	if(larg!=0) {
+		if(table[haut][larg-1]==1) {
 		nb++;
 		}
 	}
-	if(larg!=19){
-		if(table[haut][larg+1]==1){
+	if(larg!=19) {
+		if(table[haut][larg+1]==1) {
 		nb++;
 		}
 	}
 	document.getElementById("mine").innerHTML=nb;
 }
 
-function move(event){
+// gestion des mouvements joueurs
+function move(event) {
 	var key=event.keyCode;
 
 	var smile=document.getElementById("pic2");
 	var x=smile.offsetLeft;
 	var y=smile.offsetTop;
-	if(key==65){
+
+	if(key==65) { // 65 représente la touche "a"
 		cheat();
 	}
-	if(key==37){
-		if(x!=0){
-			if(table[haut][larg-1]!=1){
+
+	if(key==37) { // 37 représente la touche fleche gauche
+		if(x!=0) {
+			if(table[haut][larg-1]!=1) {
 				smile.style.left=x-20+'px';
 				larg--;
 				document.getElementById("pas").innerHTML++;
 				verifMine();
-				if(table[haut][larg]==2){
+				if(table[haut][larg]==2) {
 					alert('win');
 					start();
 				}
-			}
-			else{
+			} else {
 				larg--;
 				document.getElementById("pas").innerHTML-=10;
 				displayMine();
@@ -126,19 +129,19 @@ function move(event){
 			}
 		}
 	}
-	if(key==38){
-		if(y!=0){
-			if(table[haut-1][larg]!=1){
+
+	if(key==38) { // 38 représente la touche fleche haut
+		if(y!=0) {
+			if(table[haut-1][larg]!=1) {
 				smile.style.top=y-20+'px';
 				haut--;
 				document.getElementById("pas").innerHTML++;
 				verifMine();
-				if(table[haut][larg]==2){
+				if(table[haut][larg]==2) {
 					alert('win');
 					start();
 				}
-			}
-			else{
+			} else {
 				haut--;
 				document.getElementById("pas").innerHTML-=10;
 				displayMine();
@@ -147,19 +150,18 @@ function move(event){
 			}
 		}
 	}
-	if(key==39){
-		if(x!=380){
-			if(table[haut][larg+1]!=1){
+	if(key==39) { // 39 représente la touche fleche droite
+		if(x!=380) {
+			if(table[haut][larg+1]!=1) {
 				smile.style.left=x+20+'px';
 				larg++;
 				document.getElementById("pas").innerHTML++;
 				verifMine();
-				if(table[haut][larg]==2){
+				if(table[haut][larg]==2) {
 					alert('win');
 					start();
 				}
-			}
-			else{
+			} else {
 				larg++;
 				document.getElementById("pas").innerHTML-=10;
 				displayMine();
@@ -168,19 +170,18 @@ function move(event){
 			}
 		}
 	}
-	if(key==40){
-		if(y!=380){
-			if(table[haut+1][larg]!=1){
+	if(key==40) { // Si on appuie sur fleche bas
+		if(y!=380) {
+			if(table[haut+1][larg]!=1) {
 				smile.style.top=y+20+'px';
 				haut++;
 				document.getElementById("pas").innerHTML++;
 				verifMine();
-				if(table[haut][larg]==2){
+				if(table[haut][larg]==2) {
 					alert('win');
 					start();
 				}
-			}
-			else{
+			} else {
 				haut++;
 				document.getElementById("pas").innerHTML-=10;
 				displayMine();
