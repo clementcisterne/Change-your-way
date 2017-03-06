@@ -8,6 +8,7 @@
 	left:0px;
 }
 
+
 #coffre{
 	position:absolute;
 	top:0px;
@@ -18,10 +19,22 @@
 	position:absolute;
 	top:0px;
 	left:0px;
+
+	background-image: url("../img/mur.png");
 }
 
-#fleche {
+#fleche{
 	position:absolute;
 	top:0px;
 	left:0px;
+
+	background-image: url("../img/fleche.png");
+}
+
+#blanc {
+	position:absolute;
+	top:0px;
+	left:0px;
+
+	background-image: url("../img/blanc.png");
 }

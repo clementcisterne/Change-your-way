@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="./assets/js/script.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
 <meta charset="utf-8">
-<link href="./assets/css/style.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
 <title>Champ de mine</title>
 </head>
 <body onkeydown="move(event);">
-<div id="conteneur">
-	<table id="tableJeux">
-		
-	</table>
-	<img id="pic1" src="./assets/img/fond.png">
-	<img id="pic2" src="./assets/img/personnage.png" width="18" height="18">
-	<img id="coffre" src="./assets/img/tresor.png" width="18" height="18">
-	<img id="mur" src="./assets/img/mur.png" width="20" height="20">
-	<img id="fleche" src="./assets/img/fleche.png" width="18" height="18">
-</div>
+
+	<div id="conteneur" style="padding: 2px">
+
+
+		<img id="pic2" src="assets/img/personnage.png" width="20" height="20">
+
+	</div>
+
+
 <div>
-	<p>Score</p><p id="pas"></p>
-	<p>Nombre de mort</p><p id="nbDeath">0</p>
-	<p>Mine autours</p><p id="mine">0</p>
+	<div style="padding-top: 400px;">
+	<button id="niveau" onClick="niveauSuivant()">Niveau suivant</button>
+	<p >Niveau : <b id="vueNiveau">1</b></p>
+	<p>Score : <b id="pas">0</b></p>
+	<p>Haut : <b id="haut">0</b></p>
+	<p>Largeur : <b id="largeur">0</b></p>
+
+
 </div>
 
-<script type="text/javascript" src='./assets/js/template.js'></script>
+<script type="text/javascript" src='assets/js/template.js'></script>
 </body>
 </html>
