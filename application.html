@@ -1,32 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="assets/js/script.js"></script>
-<meta charset="utf-8">
-<link href="assets/css/style.css" rel="stylesheet">
-<title>Champ de mine</title>
+	<meta charset="utf-8">
+	<title>Change your way</title>
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+	<style type="text/css">
+		body { font-family: Ubuntu; text-decoration: none; color: wheat; /*background-color: aliceblue*/}
+	</style>
 </head>
 <body onkeydown="move(event);">
 
+<!--<nav class="navbar navbar-inverse navbar-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/#/">BeerApp</a>
+		</div>
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li id="connectionNav" class="collapsed"><a href="/#/client/signIn">Connexion</a></li>
+				<li id="inscriptionNav" class="collapsed"><a href="/#/client/signUp">Inscription</a></li>
+				<li id="helpNav" class="collapsed"><a href="/#/help">Aide</a></li>
+			</ul>
+			<ul id="dropdownUser" class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bienvenue, <%= sessionName %> <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Profil</a></li>
+						<li><a href="/#/beer/add">Ajouter une bière</a></li>
+						<li><a href="#">Mes bières</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a id="deconnect" href="/client/deconnect/">Déconnexion</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;
+	</div>
+</nav>-->
+
+<nav class="navbar navbar-inverse navbar-top">
+	<div class="container">
+		<div class="header">
+				<div>
+				<div>Niveau : <b id="vueNiveau">1</b></div>
+				<div>Score : <b id="pas">0</b></div>
+				<div style="display: inline;">Haut : <b id="haut">0</b></div>
+				<div style="display: inline;">Largeur : <b id="largeur">0</b></div>
+				<button type="button" class="btn-xs" style="color: black" id="niveau" onClick="niveauSuivant()">Niveau suivant</button>
+			</div>
+		</div>
+	</div>
+</nav>
+
 	<div id="conteneur" style="padding: 2px">
-
-
-		<img id="pic2" src="assets/img/personnage.png" width="20" height="20">
-
+		<img style="z-index: 1" id="pic2" src="assets/img/personnage.png" width="20" height="20">
 	</div>
 
-
-<div>
-	<div style="padding-top: 400px;">
-	<button id="niveau" onClick="niveauSuivant()">Niveau suivant</button>
-	<p >Niveau : <b id="vueNiveau">1</b></p>
-	<p>Score : <b id="pas">0</b></p>
-	<p>Haut : <b id="haut">0</b></p>
-	<p>Largeur : <b id="largeur">0</b></p>
-
-
-</div>
-
-<script type="text/javascript" src='assets/js/template.js'></script>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
