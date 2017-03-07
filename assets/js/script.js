@@ -18,6 +18,8 @@ var larg;
 var haut;
 var niveau;
 
+var conteneur = document.getElementById("conteneur");
+
 
 //document.onkeydown=move;
 
@@ -29,14 +31,14 @@ function start() {
 	switch (niveau) {
 		default:
 			table = [
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+				[2, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0],
 				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0],
-				[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0],
-				[0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+				[0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0],
+				[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0],
+				[0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 4, 0, 0, 1, 0, 1, 0, 0, 0],
 				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
 				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
 				[0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
 				[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -46,35 +48,36 @@ function start() {
 				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0, 5, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 			];
 			niveau=1;
 		break;
 
 		case 2:
 			table=[
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+				[2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0],
 				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0],
 				[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0],
-				[0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+				[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+				[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0],
+				[0, 0, 0, 0, 0, 1, 1, 5, 5, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+				[0, 1, 1, 1, 0, 1, 0, 0, 5, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
+				[0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0],
+				[0, 0, 0, 0, 0, 1, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+				[0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 				[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-				[0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+				[0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 1, 0, 1, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+				[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 			];
 		break;
 
@@ -129,8 +132,8 @@ function start() {
 			break;
 	}
 	displayTemplate(table);
-	boutonNiveauSuivant.style.visibility="hidden";
 	var boutonNiveauSuivant=document.getElementById("niveau");	//On va devoir cacher le bouton "niveau suivant"
+	boutonNiveauSuivant.style.visibility="hidden";
 }
 
 /**
@@ -139,70 +142,59 @@ function start() {
  * @param template un tableau à 2 dimensions
  * */
 function displayTemplate(template) {
+
 	for(var i=0;i<template.length;i++){
 		for(var j=0;j<template[i].length;j++){
+			var monImg = document.createElement('img');
 
 			// On construit la carte en fonction des valeurs des cases
 			switch (template[i][j]) {
 
 				// Case de mur infranchissable
 				case 1:
-					var conteneur = document.getElementById("conteneur");
-					var monImg = document.createElement('img');
 					monImg.setAttribute('class','mur');
 					monImg.src="./assets/img/mur.png";
-					monImg.style.height='20px';
-					monImg.style.width='20px';
-					monImg.style.position='absolute';
-					monImg.style.top=i*20+'px';
-					monImg.style.left=j*20+'px';
-					conteneur.appendChild(monImg);
 					break;
 
 				// Case de passage
 				case 0:
-					var conteneur = document.getElementById("conteneur");
-					var monImg = document.createElement('img');
 					monImg.src="./assets/img/blanc.png";
-					monImg.style.height='20px';
-					monImg.style.width='20px';
-					monImg.style.position='absolute';
-					monImg.style.top=i*20+'px';
-					monImg.style.left=j*20+'px';
-					conteneur.appendChild(monImg);
 					break;
 
 				// Position de départ du joueur
 				case 2:
-					var conteneur = document.getElementById("conteneur");
 					var monImg = document.getElementById("pic2");
 					monImg.src="./assets/img/personnage.png";
-					monImg.style.height='20px';
-					monImg.style.width='20px';
-					monImg.style.position='absolute';
-					monImg.style.top=i*20+'px';
-					monImg.style.left=j*20+'px';
 					haut=i; // On initialise les valeurs pour la case de départ
 					larg=j;
 					document.getElementById('haut').innerHTML = haut;
 					document.getElementById('largeur').innerHTML = larg;
-					conteneur.appendChild(monImg);
 					break;
 
 				// Position de la fleche
 				case 3:
-					var conteneur = document.getElementById("conteneur");
-					var monImg = document.createElement('img');
-					monImg.style.visibility = "visible";
 					monImg.src="./assets/img/fleche.png";
-					monImg.style.height='20px';
-					monImg.style.width='20px';
-					monImg.style.position='absolute';
-					monImg.style.top=i*20+'px';
-					monImg.style.left=j*20+'px';
-					conteneur.appendChild(monImg);
+					monImg.setAttribute('class', 'fleche');
+					break;
+
+				// Position de la cle
+				case 4:
+					monImg.src="./assets/img/cle.png";
+					monImg.setAttribute('id', 'cle');
+					break;
+
+				// Position de la porte
+				case 5:
+					monImg.src="./assets/img/porte.png";
+					monImg.setAttribute('class', 'porte');
 					break;
 			}
+			monImg.style.height='20px';
+			monImg.style.width='20px';
+			monImg.style.position='absolute';
+			monImg.style.top=i*20+'px';
+			monImg.style.left=j*20+'px';
+			conteneur.appendChild(monImg);
 		}
 	}
 }
@@ -222,7 +214,7 @@ function move(event) {
 
 	// On récupère la touche du clavier
 	if(key==37) { // 37 représente la touche fleche gauche
-		if(x!=0) {
+		if(x!=0) {  // si on est en dehors de la limite de la map
 			case_suivante = table[haut][larg-1];
 			direction = "gauche";
 		} else {
@@ -290,17 +282,99 @@ function move(event) {
 			}
 			break;
 
-		case 1:
+		case 3:
+			win();
+			break;
+
+
+		case 4:
+			switch (direction) {
+				case 'droite':
+					smile.style.left=x+20+'px';
+					larg++;
+					document.getElementById('largeur').innerHTML = larg;
+					document.getElementById("pas").innerHTML++;
+					break;
+
+				case 'gauche':
+					smile.style.left=x-20+'px';
+					larg--;
+					document.getElementById('largeur').innerHTML = larg;
+					document.getElementById("pas").innerHTML++;
+					break;
+
+				case 'haut':
+					smile.style.top=y-20+'px';
+					haut--;
+					document.getElementById('haut').innerHTML = haut;
+					document.getElementById("pas").innerHTML++;
+					break;
+
+				case 'bas':
+					smile.style.top=y+20+'px';
+					haut++;
+					document.getElementById('haut').innerHTML = haut;
+					document.getElementById("pas").innerHTML++;
+					break;
+
+				case undefined:
+
+					break;
+
+				default:
+					break;
+			}
+
+			// On cache la cle on cache la porte et emmetre un son
+			document.getElementById('cle').remove();
+			var portes = document.getElementsByClassName('porte');
+			for(i=0;i<portes.length;i++) {
+				portes[i].style.visibility = "hidden";
+			}
 
 			break;
 
-		case 3:
-			win();
+		case 5:
+			if(document.getElementById('cle') == undefined){
+				switch (direction) {
+					case 'droite':
+						smile.style.left=x+20+'px';
+						larg++;
+						document.getElementById('largeur').innerHTML = larg;
+						document.getElementById("pas").innerHTML++;
+						break;
+
+					case 'gauche':
+						smile.style.left=x-20+'px';
+						larg--;
+						document.getElementById('largeur').innerHTML = larg;
+						document.getElementById("pas").innerHTML++;
+						break;
+
+					case 'haut':
+						smile.style.top=y-20+'px';
+						haut--;
+						document.getElementById('haut').innerHTML = haut;
+						document.getElementById("pas").innerHTML++;
+						break;
+
+					case 'bas':
+						smile.style.top=y+20+'px';
+						haut++;
+						document.getElementById('haut').innerHTML = haut;
+						document.getElementById("pas").innerHTML++;
+						break;
+
+					default:
+						break;
+				}
+			}
 			break;
 	}
 }
 
 function win() {
+	reset(table);
 	table=[
 		[2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -349,6 +423,7 @@ function niveauSuivant() {
 
 	document.getElementById('vueNiveau').innerHTML=niveau;
 	console.log(niveau);
+	reset(table);
 	start();
 }
 
@@ -356,7 +431,7 @@ function reset(template){
 	for(var i=0;i<template.length;i++){
 		for(var j=0;j<template[i].length;j++){
 			table[i][j] = 0;
-			enleverMur(i,j);
+			enleverMur(i,j)
 		}
 	}
 }
